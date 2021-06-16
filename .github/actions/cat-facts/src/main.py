@@ -3,7 +3,7 @@ import random
 import sys
 
 # Make an HTTP GET request to the cat-fact API
-cat_url = "https://cat-fact.herokuapp.com/facts"
+cat_url = "https://jsonplaceholder.typicode.com/todos/1"
 r = requests.get(cat_url)
 r_obj_list = r.json()
 
@@ -12,8 +12,9 @@ r_obj_list = r.json()
 fact_list = []
 
 # Add the "text" of every object into the fact_list list
-for fact in r_obj_list:
-    fact_list.append(fact["text"])
+#for fact in r_obj_list:
+#    fact_list.append(fact["text"])
+fact_list.append(r_obj_list["title"])
 
 # Select a random fact from the fact_list and return it
 # into a variable named random_fact so we can use it
